@@ -7,4 +7,9 @@ class MoviesController < ApplicationController
   def new
   # default: render 'new' template
   end
+
+  def create
+  @movie = Movie.create!(params[:movie])
+  redirect_to movies_path
+  end
 end
